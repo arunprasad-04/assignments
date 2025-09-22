@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Hairgrooming Salon</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2d2d2d;
+            --accent: #ff6f61;
+            --bg: #f7f7f7;
+            --card-bg: #fff;
+            --shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--bg);
+            color: var(--primary);
+        }
+        header {
+            background: var(--primary);
+            color: #fff;
+            padding: 2rem 0 1rem 0;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        header h1 {
+            font-size: 2.5rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+        nav {
+            margin-top: 1rem;
+        }
+        nav a {
+            color: var(--accent);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #fff;
+        }
+        .slider {
+            position: relative;
+            max-width: 900px;
+            margin: 2rem auto;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            box-shadow: var(--shadow);
+            background: var(--card-bg);
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+            will-change: transform;
+        }
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .slide img {
+            width: 320px;
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+        }
+        .slide-content {
+            max-width: 400px;
+        }
+        .slide-content h2 {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+        .slide-content p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .slide-content button {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: background 0.2s;
+        }
+        .slide-content button:hover {
+            background: #e85c50;
+        }
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+        .slider-controls button {
+            pointer-events: all;
+            background: rgba(255,255,255,0.8);
+            border: none;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            font-size: 2rem;
+            color: var(--accent);
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            transition: background 0.2s;
+        }
+        .slider-controls button:hover {
+            background: var(--accent);
+            color: #fff;
+        }
+        .services {
+            max-width: 900px;
+            margin: 3rem auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background: var(--card-bg);
+            border-radius: 1rem;
+            box-shadow: var(--shadow);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-8px) scale(1.03);
+        }
+        .service-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .service-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+        footer {
+            background: var(--primary);
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        @media (max-width: 700px) {
+            .slide {
+                flex-direction: column;
+                padding: 2rem 1rem;
+            }
+            .slide img {
+                width: 100%;
+                max-width: 260px;
+            }
+            .slide-content {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Urban Shear Salon</h1>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="slider" id="home">
+        <div class="slides">
+            <div class="slide">
+                <div class="slide-content">
+                    <h2>Welcome to Urban Shear</h2>
+                    <p>Experience luxury hair grooming with our expert stylists. Modern styles, classic cuts, and a relaxing atmosphere await you.</p>
+                    <button>Book Now</button>
+                </div>
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Salon Welcome">
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h2>Expert Haircuts</h2>
+                    <p>From fades to layers, our stylists deliver precision and creativity for every hair type and style.</p>
+                    <button>View Styles</button>
+                </div>
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80" alt="Haircut">
+            </div>
+            <div class="slide">
+                <div class="slide-content">
+                    <h2>Color & Highlights</h2>
+                    <p>Transform your look with vibrant colors and natural highlights using premium products and techniques.</p>
+                    <button>See Colors</button>
+                </div>
+                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=80" alt="Hair Color">
+            </div>
+        </div>
+        <div class="slider-controls">
+            <button id="prev">&#8592;</button>
+            <button id="next">&#8594;</button>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="service-card">
+            <h3>Haircuts & Styling</h3>
+            <p>Modern, classic, and creative cuts for all ages. Blowouts, updos, and styling for every occasion.</p>
+        </div>
+        <div class="service-card">
+            <h3>Coloring & Highlights</h3>
+            <p>Balayage, ombre, highlights, and full color using top-tier products for vibrant, lasting results.</p>
+        </div>
+        <div class="service-card">
+            <h3>Beard Grooming</h3>
+            <p>Precision beard trims, shaping, and treatments for a sharp, polished look.</p>
+        </div>
+        <div class="service-card">
+            <h3>Hair Treatments</h3>
+            <p>Deep conditioning, keratin, and scalp treatments to restore and revitalize your hair.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        &copy; 2024 Urban Shear Salon &mdash; Modern Hairgrooming Experience
+    </footer>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        const slideCount = document.querySelectorAll('.slide').length;
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slideCount;
+            showSlide(currentSlide);
+        });
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            showSlide(currentSlide);
+        });
+
+        // Optional: Auto-slide every 6 seconds
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slideCount;
+            showSlide(currentSlide);
+        }, 6000);
+
+        // Initial slide
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
