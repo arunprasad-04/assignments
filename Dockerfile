@@ -1,20 +1,11 @@
-# Step 1: Use Node.js official image
-FROM node:20
+# Use lightweight Nginx image
+FROM nginx:alpine
 
-# Step 2: Set working directory inside the container
-WORKDIR /app
+# Copy all HTML files into Nginx's default web folder
+COPY . /usr/share/nginx/html
 
-# Step 3: Copy package.json and package-lock.json first
-COPY package*.json ./
+# Expose port 80 to access the website
+EXPOSE 80
 
-# Step 4: Install dependencies
-RUN npm install
-
-# Step 5: Copy the rest of your app
-COPY . .
-
-# Step 6: Expose port your app uses (change if your app uses a different port)
-EXPOSE 3000
-
-# Step 7: Start your app
-CMD ["npm", "start"]
+# Start Nginx server
+CMD ["nginx", "-g", "daemon off;"]
